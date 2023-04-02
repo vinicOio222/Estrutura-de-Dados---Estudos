@@ -1,1 +1,1 @@
-Lista de Exercícios feitas por mim.
+Lista de Exercícios respondidas por mim.
