@@ -1,6 +1,6 @@
 # Códigos dos Tipos Abstratos de Dados tradicionais das Estruturas de Dados
 
-**TADs:**
+**=> TADs:**
 
   1.**Lista**: conjunto de dados sequenciais que podem ser ordenados ou não, cuja ordem de inserção ou remoção não importa a rígidos critérios;
   
