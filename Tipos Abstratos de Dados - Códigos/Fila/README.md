@@ -1,1 +1,1 @@
-**Filas Estática e Dinâmica**
+**Filas Estática e Dinâmica** - Estrutura de Dados Sequenciais
