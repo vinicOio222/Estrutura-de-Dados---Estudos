@@ -1,5 +1,5 @@
-# Data-Structure---Static-Student-Queue
+# Data-Structure---Student-Static-List
 
-Código feito C com base na ideia de uma Fila Estática de Alunos com um struct aluno cujos dados são nome, matrícula, 3 notas. Suas operações seguem a lógica de uma fila: **FIFO**("First In, First Out"), ou seja, o **primeiro a entrar é o primeiro a sair**. Portanto suas operações consistem em criar a fila, alocando seu tamanho na memória; inserir o elemento no final da fila, remover o primeiro da fila, consultar o aluno na posição indicada e imprimir tamanho e a fila de alunos. Feito com recursos de **Alocação de Memória**.
+Código feito C com base na ideia de uma Lista Estática Sequencial de Alunos com nome, matrícula, 3 notas e operações como inicializar a lista, inserir alunos no inicio, no fim e ordenados segundo matrícula; remover no início, no fim e segundo a matricula indicada; buscar, imprimir cada aluno da lista e o tamanho da mesma. 
 
 **Projeto feito para estudo de Estrutura de Dados.**
