@@ -95,11 +95,11 @@ void consulta_pilha(Pilha* pi, int pos){
 
 void acessa_pilha_topo(Pilha* pi){
     if(pi == NULL){
-       printf("Erro: Lista não criada!");
+       printf("Erro: Pilha não criada!");
        return;
     }
     if((*pi) == NULL){
-        printf("Erro: Lista vazia!");
+        printf("Erro: Pilha vazia!");
        return;
     }
     printf("\n===TOPO DA PILHA===\n");
