@@ -1,4 +1,4 @@
-#Data-Structure---Student-Hash-Table
+# Data-Structure---Student-Hash-Table
 
 
 Código de uma **Tabela Hash** feita em C que possui uma **struct aluno** cujos dados são nome, matrícula e 3 notas. Suas operações seguem
