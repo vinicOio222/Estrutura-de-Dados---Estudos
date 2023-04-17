@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
-#include "lista_inv.h"
+#include "fila_inv.h"
 
 struct fila{
     int itens[MAX];
