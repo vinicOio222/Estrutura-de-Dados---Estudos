@@ -1,4 +1,4 @@
-# Códigos dos Tipos Abstratos de Dados tradicionais das Estruturas de Dados
+# Códigos dos Tipos Abstratos de Dados Tradicionais das Estruturas de Dados
 
 **=> TADs:**
 
