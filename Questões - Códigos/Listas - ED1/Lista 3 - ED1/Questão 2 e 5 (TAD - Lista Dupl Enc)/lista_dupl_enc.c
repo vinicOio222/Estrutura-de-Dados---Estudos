@@ -5,7 +5,6 @@
 
 struct lista_enc{
     Nodo* inicio;
-
 };
 
 ListaEnc* cria_lista_dupl(){
@@ -23,21 +22,16 @@ void inserir_elemento_inicio(ListaEnc* li, int valor){
         li->inicio->ant = no;
     }
     li->inicio = no;
-
 }
 
-void remover_elemento_final(ListaEnc* li){
+void remover_elemento_inicio(ListaEnc* li){
     if(li->inicio == NULL){
         return;
     }
     Nodo* no_atual = li->inicio;
-    while(no_atual->prox != NULL){
-        no_atual = no_atual->prox;
-    }
-    if(no_atual->ant != NULL){
-        no_atual->ant->prox = NULL;
-    }else{
-        li->inicio = NULL;
+    li->inicio = no_atual->prox;
+    if(no_atual->prox != NULL){
+        no_atual->prox->ant = NULL;
     }
     free(no_atual);
 }
@@ -49,7 +43,6 @@ void imprimir_lista(ListaEnc* li){
         no_atual = no_atual->prox;
     }
     printf("\n");
-
 }
 
 void liberar_lista(ListaEnc *l) {
@@ -62,7 +55,6 @@ void liberar_lista(ListaEnc *l) {
     free(l);
 }
 
-
 int main() {
     ListaEnc *l = cria_lista_dupl();
     inserir_elemento_inicio(l, 1);
@@ -70,7 +62,7 @@ int main() {
     inserir_elemento_inicio(l, 3);
     printf("Lista atual: ");
     imprimir_lista(l);
-    remover_elemento_final(l);
+    remover_elemento_inicio(l);
     printf("Lista atualizada: ");
     imprimir_lista(l);
     return 0;
