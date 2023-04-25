@@ -1,11 +1,12 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<stdio.h>
+#include<stdlib.h>
 #include<string.h>
 #include "lista_dupl_enc.h"
 
 struct lista_enc{
     Nodo* inicio;
-
 };
 
 ListaEnc* cria_lista_dupl(){
@@ -14,30 +15,31 @@ ListaEnc* cria_lista_dupl(){
     return li;
 }
 
-void inserir_elemento_inicio(ListaEnc* li, int valor){
+void inserir_elemento_final(ListaEnc* li, int valor){
     Nodo* no = (Nodo*)malloc(sizeof(Nodo));
     no->dados = valor;
-    no->ant = NULL;
-    no->prox = li->inicio;
-    if(li->inicio != NULL){
-        li->inicio->ant = no;
+    no->prox = NULL;
+    if (li->inicio == NULL){
+        no->ant = NULL;
+        li->inicio = no;
+    } else {
+        Nodo* no_atual = li->inicio;
+        while (no_atual->prox != NULL){
+            no_atual = no_atual->prox;
+        }
+        no_atual->prox = no;
+        no->ant = no_atual;
     }
-    li->inicio = no;
-
 }
 
-void remover_elemento_final(ListaEnc* li){
+void remover_elemento_inicio(ListaEnc* li){
     if(li->inicio == NULL){
         return;
     }
     Nodo* no_atual = li->inicio;
-    while(no_atual->prox != NULL){
-        no_atual = no_atual->prox;
-    }
-    if(no_atual->ant != NULL){
-        no_atual->ant->prox = NULL;
-    }else{
-        li->inicio = NULL;
+    li->inicio = no_atual->prox;
+    if(no_atual->prox != NULL){
+        no_atual->prox->ant = NULL;
     }
     free(no_atual);
 }
@@ -49,7 +51,6 @@ void imprimir_lista(ListaEnc* li){
         no_atual = no_atual->prox;
     }
     printf("\n");
-
 }
 
 void liberar_lista(ListaEnc *l) {
@@ -62,15 +63,14 @@ void liberar_lista(ListaEnc *l) {
     free(l);
 }
 
-
 int main() {
     ListaEnc *l = cria_lista_dupl();
-    inserir_elemento_inicio(l, 1);
-    inserir_elemento_inicio(l, 2);
-    inserir_elemento_inicio(l, 3);
+    inserir_elemento_final(l, 1);
+    inserir_elemento_final(l, 2);
+    inserir_elemento_final(l, 3);
     printf("Lista atual: ");
     imprimir_lista(l);
-    remover_elemento_final(l);
+    remover_elemento_inicio(l);
     printf("Lista atualizada: ");
     imprimir_lista(l);
     return 0;

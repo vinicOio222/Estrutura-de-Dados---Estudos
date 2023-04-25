@@ -59,7 +59,7 @@ void Ponto_subtracao(Ponto* p1, Ponto* p2){
        return;
     }
     Ponto sub;
-    sub.x = p1->x - p2x;
+    sub.x = p1->x - p2->x;
     sub.y = p1->y - p2->y;
     printf("\n === Subtração de Pontos === \n");
     printf("x = %.2f\n", sub.x);
