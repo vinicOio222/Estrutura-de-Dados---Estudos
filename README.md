@@ -2,6 +2,6 @@
 
 Conteúdo da minha cadeira de **Estrutura de Dados** da faculdade com exercícios.
 
-**## Vídeo-aulas**
+**# Vídeo-aulas**
 
 [Aula 01 - Algoritmos(Parte 01)]()
