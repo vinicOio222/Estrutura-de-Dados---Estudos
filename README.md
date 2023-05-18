@@ -63,3 +63,12 @@ Conteúdo da minha cadeira de **Estrutura de Dados** da faculdade com exercício
 
 [Aula 20 - Árvore Binária(Parte 02)](https://drive.google.com/file/d/1ZNDwMZK2UP9JgukyD0SmdviH9khrAdRQ/view?usp=drive_web&authuser=1)
 
+-> Árvore AVL
+
+[Aula 21 - Árvore AVL(Parte 01)](https://drive.google.com/file/d/1BY7HMJA11putCt9SuNyU3Jt6uVJSenA4/view?usp=drive_web&authuser=1)
+
+[Aula 22 - Árvore AVL(Parte 02)](https://drive.google.com/file/d/1Gt1c3f0R9ev4wgP7tk8pjoXqY-v0SXdJ/view?usp=drive_web&authuser=1)
+
+[Aula 23 - Árvore AVL(Parte 03)](https://drive.google.com/file/d/1o4sBZzq_GAerOs9lOYnDK-UWLkN0Va-z/view?usp=drive_web&authuser=1)
+
+
