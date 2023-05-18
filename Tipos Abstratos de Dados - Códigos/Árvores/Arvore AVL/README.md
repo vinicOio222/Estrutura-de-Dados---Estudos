@@ -17,7 +17,7 @@ O **fator de balanceamento** trata-se da diferença entre as alturas das subárv
    -> **LR**: Rotação à Esquerda e à Direita: nós com fb de sinais diferentes (nó pai positivo e nó filho negativo);
    **Ex**:  C(fb = 0)<-B(fb = -1)<-A(fb = +2)
 
-   -> **RL**: Rotação à Esquerda e à Direita: nós com fb de sinais diferentes (nó pai negativo e nó filho positivo);
+   -> **RL**: Rotação à Direita e à Esquerda: nós com fb de sinais diferentes (nó pai negativo e nó filho positivo);
    **Ex**:  C(fb = 0)<-B(fb = +1)<-A(fb = -2)
 
 
