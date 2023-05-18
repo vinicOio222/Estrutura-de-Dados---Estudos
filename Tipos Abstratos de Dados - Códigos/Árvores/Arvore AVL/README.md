@@ -21,6 +21,6 @@ O **fator de balanceamento** trata-se da diferença entre as alturas das subárv
    **Ex**:  C(fb = 0)<-B(fb = +1)<-A(fb = -2)
 
 
-A consulta e impressão(em ordem; ordem pré e ordem posterior) de uma Árvore AVL**.
+**A consulta e impressão(em ordem; ordem pré e ordem posterior) de uma Árvore AVL**.
 
 **Código feito para Estudo da cadeira de Estrutura de Dados**
