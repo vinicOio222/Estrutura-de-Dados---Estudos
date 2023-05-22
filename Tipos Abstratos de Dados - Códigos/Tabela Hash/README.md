@@ -52,7 +52,6 @@ a posição do aluno na mesma**.
 
 Também pode ser aplicado para valores binários. Em vez de soma, deve ser utilizada a operação de "ou exclusivo". A dobra é realizada de k em k bits, o que resulta em um valor de posição entre 0 e 2^k - 1. **Ex**: k = 5
 
-
                         71(0001000111 em binário)        46(0000101110 em binário)
                         - Posição = 00010 ^ 00111        - Posição = 00001 ^ 01110
                         - Posição = 00101                - Posição = 01111
@@ -64,6 +63,43 @@ Para o caso da chave ser uma string , deve-se calcular o valor numérico da mesm
 
 ![image](https://github.com/vinicOio222/Estrutura-de-Dados---Estudos/assets/101837153/16cc7596-7432-45c1-a431-53a3127ef347)
 
+**Inserção e Busca** - Calcular a posição dos dados na tabela a partir de parte dos dados(chave) a serem inseridos e buscados.
+
+  * **Sem Tratamento de Colisão**: neste caso não há nenhuma função auxiliar que previne que dois ou mais itens venham a ter a mesma chave e por consequência mesma posição;
+    * Hashing Imperfeito: podem ocorrer colisões das chaves armazenadas;
+    * Hashing Perfeito: chaves diferentes vão sempre produzir posições diferentes; 
+    
+  * **Com Tratamento de Colisão**
+  
+    a) **Encadeamento Separado**: Armazena dentro de cada posição da tabela o início de uma lista dinâmica encadeada. É dentro desta lista que serão armazenadas as colisões (elementos com chaves iguais) para aquela posição da tabela.
+
+![image](https://github.com/vinicOio222/Estrutura-de-Dados---Estudos/assets/101837153/6d804058-1152-4a2d-816d-f85bfd6d20e2)
+
+  b) **Endereçamento Aberto**: Utiliza lugares vazios na própria tabela para resolver as colisões. Quando uma colisão ocorre, calcula-se uma nova posição da tabela. Se esta nova posição estiver ocupada, uma nova posição é calculada. O cálculo da posição é refeito até que uma posção vaga seja encontrada. Há **três estratégias** para isso: 
+  
+1. *Sondagem Linear* - tenta espalhar os elementos de forma sequencial a partir da posição calculada utilizando a função de hashing.
+
+                           Hj = (h(x)+j) mod M, para 1 <= j <= M-1.
+                           
+![image](https://github.com/vinicOio222/Estrutura-de-Dados---Estudos/assets/101837153/6f8f8c08-1a34-4bcc-9117-17408db6c3e8)
+
+ **Ex**: chaves : L U N E S;  M = 7
+ 
+ ![image](https://github.com/vinicOio222/Estrutura-de-Dados---Estudos/assets/101837153/f8df655b-1927-4582-b255-de1ad3b6ae6b)
+ 
+ 2. *Sondagem Quadrática* - a ideia agora é obter sequências de endereços diversos para endereços-base próximos, porém diferentes.
+
+                          Hj = (h(x) + c1k + c2k^2)) mod M, para 1<=j<=M-1
+
+![image](https://github.com/vinicOio222/Estrutura-de-Dados---Estudos/assets/101837153/e026a2a2-50b8-4e36-9a3f-0f1ab64d2dd3)
+
+3. *Duplo Hash* - tenta espalhar os elementos utilizando duas funções de hashing.
+    - 1ª função(H1) : calcula a **posição inicial do elemento**;
+    - 2ª função(H2) : calcula o **deslocamento** em relação à posição inicial(no caso de uma colisão);
+ 
+                         H1 + i * H2 (i é a tentativa atual de inserção do elemento)
+                         
+![image](https://github.com/vinicOio222/Estrutura-de-Dados---Estudos/assets/101837153/fbd3ebff-02f6-490d-9480-df3c333ebb26)
 
 
 **Projeto feito para estudo da cadeira de Estrutura de Dados**
