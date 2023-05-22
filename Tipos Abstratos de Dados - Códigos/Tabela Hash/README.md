@@ -60,5 +60,10 @@ Também pode ser aplicado para valores binários. Em vez de soma, deve ser utili
                         
 ![image](https://github.com/vinicOio222/Estrutura-de-Dados---Estudos/assets/101837153/235db820-f94e-4bbe-9dc6-e72f708a9f96)
 
+Para o caso da chave ser uma string , deve-se calcular o valor numérico da mesma. O valor pode ser facilmente calculado somando os valores ASCII dos caracteres que compõem a string. O resultado dessa função pode ser utilizado como parâmetro para uma função de hashing.
+
+![image](https://github.com/vinicOio222/Estrutura-de-Dados---Estudos/assets/101837153/16cc7596-7432-45c1-a431-53a3127ef347)
+
+
 
 **Projeto feito para estudo da cadeira de Estrutura de Dados**
