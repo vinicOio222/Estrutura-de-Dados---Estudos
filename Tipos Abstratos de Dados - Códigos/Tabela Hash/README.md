@@ -1,10 +1,5 @@
 # Data-Structure---Student-Hash-Table
 
-Código de uma **Tabela Hash** feita em C que possui uma **struct aluno** cujos dados são nome, matrícula e 3 notas. Suas operações seguem
-a ideia de uma função hash que armezena os dados em forma de pares de chaves e valores numa tabela. Possui operações como **inicializar a tabela hash**, **liberar a tabela hash**,**criar uma chave pelo método de divisão**, **as inserções na Tabela Hash com e sem o tratamento de colisão**, **busca do elemento aluno pela sua chave matrícula
-com e sem o tratamento de colisão**, **a sondagem linear - que evita a colisão de dados e ajuda na realocação do dado** ; e por fim **a impressão da tabela hash com
-a posição do aluno na mesma**.
-
 * **Princípio do Método de Busca** - o mais ideal -> O(1)
   * Procurar a informação desejada com base na comparação de algum valor que compões as suas chaves.
 
@@ -30,19 +25,19 @@ a posição do aluno na mesma**.
 
 **Métodos de Cálculo da Posição na Tabela Hash**:
  * **Método da Divisão** : calcular o resto da divisão do valor inteiro que representa o elemento pelo tamanho da tabela, TABLE_SIZE. No entanto, valores diferentes podem resultar na mesma posição. **Ex**:
-                      
+
                       11 % 10 = 1
                       21 % 10 = 1
 
 ![image](https://github.com/vinicOio222/Estrutura-de-Dados---Estudos/assets/101837153/77eea9d9-b8ae-48b3-a10e-35ac6a219f1a)
 
  * **Método da Multiplicação** : utiliza uma constante fracionária A, **0<A<1**, para multiplicar o valor da chave que representa o elemento. Em seguida, a parte fracionária é multiplicada pelo tamanho da tabela para calcular a posição do elemento. **Ex**: chave = 123456, A = 0.618, TABLE_SIZE = 1024
-                      
+
                      - Posição = ParteInteira(TABLE_SIZE * ParteFracionária(chave * A))
                      - Posição = ParteInteira(1024 * ParteFracionária(123456 * 0.618))
                      - Posição = ParteInteira(1024 * ParteFracionária(76295.808))
                      - Posição = ParteInteira(1024 * 0.808)
-                     - Posição = ParteInteira(827.392) 
+                     - Posição = ParteInteira(827.392)
 
 ![image](https://github.com/vinicOio222/Estrutura-de-Dados---Estudos/assets/101837153/53364c35-508e-4a05-9e22-02781cba4669)
 
@@ -56,7 +51,7 @@ Também pode ser aplicado para valores binários. Em vez de soma, deve ser utili
                         - Posição = 00010 ^ 00111        - Posição = 00001 ^ 01110
                         - Posição = 00101                - Posição = 01111
                         - Posição = 5                    - Posição = 15
-                        
+
 ![image](https://github.com/vinicOio222/Estrutura-de-Dados---Estudos/assets/101837153/235db820-f94e-4bbe-9dc6-e72f708a9f96)
 
 Para o caso da chave ser uma string , deve-se calcular o valor numérico da mesma. O valor pode ser facilmente calculado somando os valores ASCII dos caracteres que compõem a string. O resultado dessa função pode ser utilizado como parâmetro para uma função de hashing.
@@ -67,26 +62,26 @@ Para o caso da chave ser uma string , deve-se calcular o valor numérico da mesm
 
   * **Sem Tratamento de Colisão**: neste caso não há nenhuma função auxiliar que previne que dois ou mais itens venham a ter a mesma chave e por consequência mesma posição;
     * Hashing Imperfeito: podem ocorrer colisões das chaves armazenadas;
-    * Hashing Perfeito: chaves diferentes vão sempre produzir posições diferentes; 
-    
+    * Hashing Perfeito: chaves diferentes vão sempre produzir posições diferentes;
+
   * **Com Tratamento de Colisão**
-  
+
     a) **Encadeamento Separado**: Armazena dentro de cada posição da tabela o início de uma lista dinâmica encadeada. É dentro desta lista que serão armazenadas as colisões (elementos com chaves iguais) para aquela posição da tabela.
 
 ![image](https://github.com/vinicOio222/Estrutura-de-Dados---Estudos/assets/101837153/6d804058-1152-4a2d-816d-f85bfd6d20e2)
 
-  b) **Endereçamento Aberto**: Utiliza lugares vazios na própria tabela para resolver as colisões. Quando uma colisão ocorre, calcula-se uma nova posição da tabela. Se esta nova posição estiver ocupada, uma nova posição é calculada. O cálculo da posição é refeito até que uma posção vaga seja encontrada. Há **três estratégias** para isso: 
-  
+  b) **Endereçamento Aberto**: Utiliza lugares vazios na própria tabela para resolver as colisões. Quando uma colisão ocorre, calcula-se uma nova posição da tabela. Se esta nova posição estiver ocupada, uma nova posição é calculada. O cálculo da posição é refeito até que uma posção vaga seja encontrada. Há **três estratégias** para isso:
+
 1. *Sondagem Linear* - tenta espalhar os elementos de forma sequencial a partir da posição calculada utilizando a função de hashing.
 
                            Hj = (h(x)+j) mod M, para 1 <= j <= M-1.
-                           
+
 ![image](https://github.com/vinicOio222/Estrutura-de-Dados---Estudos/assets/101837153/6f8f8c08-1a34-4bcc-9117-17408db6c3e8)
 
  **Ex**: chaves : L U N E S;  M = 7
- 
+
  ![image](https://github.com/vinicOio222/Estrutura-de-Dados---Estudos/assets/101837153/f8df655b-1927-4582-b255-de1ad3b6ae6b)
- 
+
  2. *Sondagem Quadrática* - a ideia agora é obter sequências de endereços diversos para endereços-base próximos, porém diferentes.
 
                           Hj = (h(x) + c1k + c2k^2)) mod M, para 1<=j<=M-1
@@ -96,9 +91,9 @@ Para o caso da chave ser uma string , deve-se calcular o valor numérico da mesm
 3. *Duplo Hash* - tenta espalhar os elementos utilizando duas funções de hashing.
     - 1ª função(H1) : calcula a **posição inicial do elemento**;
     - 2ª função(H2) : calcula o **deslocamento** em relação à posição inicial(no caso de uma colisão);
- 
+
                          H1 + i * H2 (i é a tentativa atual de inserção do elemento)
-                         
+
 ![image](https://github.com/vinicOio222/Estrutura-de-Dados---Estudos/assets/101837153/fbd3ebff-02f6-490d-9480-df3c333ebb26)
 
 
