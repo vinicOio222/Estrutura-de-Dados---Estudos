@@ -82,6 +82,8 @@ e ordem posterior) de uma Árvore Binária Pura**.
 
 ![image](https://github.com/vinicOio222/Estrutura-de-Dados---Estudos/assets/101837153/599192fa-6e04-4ec3-98f6-0b262d62716d)
 
+-> Árvore Binária como TAD
 
+![image](https://github.com/vinicOio222/Estrutura-de-Dados---Estudos/assets/101837153/ce8121bb-67bc-4146-9f25-db38cdc232a9)
 
 **Código feito para Estudo da cadeira de Estrutura de Dados**
