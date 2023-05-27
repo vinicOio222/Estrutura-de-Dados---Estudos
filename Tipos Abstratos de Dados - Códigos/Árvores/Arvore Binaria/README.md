@@ -87,7 +87,7 @@ e ordem posterior) de uma Árvore Binária Pura**.
 ![image](https://github.com/vinicOio222/Estrutura-de-Dados---Estudos/assets/101837153/ce8121bb-67bc-4146-9f25-db38cdc232a9)
 
 **Liberando uma Árvore Binária**
-  * **Liberar árvore binárica com alocação dinâmica e acesso encadeado** -> Percorrer toda a árvore liberando a memória alocada de cada nó inserido nela;
+  * **Liberar árvore binária com alocação dinâmica e acesso encadeado** -> Percorrer toda a árvore liberando a memória alocada de cada nó inserido nela;
   * **Liberar um nó da árvore** -> Liberar a suas subárvores direita e esquerda. O nó se torna então um nó folha e pode ser liberado(sem prejuízos para o restante da árvore);
 
 ![image](https://github.com/vinicOio222/Estrutura-de-Dados---Estudos/assets/101837153/ad2b80a8-c691-4231-be59-48b3717dfa52)
