@@ -4,123 +4,155 @@
 
 struct No{
     int info;
-    struct No *esq;
-    struct No *dir;
+    struct No* esq;
+    struct No* dir;
 };
 
 ArvBin* cria_ArvBin(){
     ArvBin* raiz = (ArvBin*)malloc(sizeof(ArvBin));
     if(raiz != NULL)
-        *raiz = NULL;
+       *raiz = NULL;
     return raiz;
 }
 
-void libera_No(struct No *no){
-    if(no == NULL)
-        return;
+void libera_No(struct No* no){
+    if(no == NULL){
+       return;
+    }
     libera_No(no->esq);
     libera_No(no->dir);
     free(no);
     no = NULL;
-
 }
 
-void libera_ArvBin(ArvBin *raiz){
-    if(raiz == NULL)
-        return;
+void libera_ArvBin(ArvBin* raiz){
+    if(raiz == NULL){
+       printf("Árvore Vazia!\n");
+       return;
+    }
     libera_No(*raiz);
     free(raiz);
 }
 
-int estaVazia_ArvBin(ArvBin *raiz){
-    if(raiz == NULL)
-        return 1;
-    if(*raiz == NULL)
-        return 1;
+int estaVazia_ArvBin(ArvBin* raiz){
+    if(raiz == NULL){
+       printf("Árvore Vazia!\n");
+       return 1;
+    }
+    if(*raiz == NULL){
+       printf("Árvore Vazia!\n");
+       return 1;
+    }
     return 0;
 }
 
-int totalNo_ArvBin(ArvBin *raiz){
-    if(raiz == NULL)
+int totalNo_ArvBin(ArvBin* raiz){
+    if(raiz == NULL){
+        printf("Árvore Vazia!\n");
         return 0;
-    if(*raiz == NULL)
+    }
+    if(*raiz == NULL){
+        printf("Árvore Vazia!\n");
         return 0;
+    }
     int total_esq = totalNo_ArvBin(&((*raiz)->esq));
     int total_dir = totalNo_ArvBin(&((*raiz)->dir));
+    printf("Número total de nós: ");
     return(total_esq + total_dir + 1);
 }
 
-int altura_ArvBin(ArvBin *raiz){
-    if(raiz == NULL)
+int altura_ArvBin(ArvBin* raiz){
+    if(raiz == NULL){
+        printf("Árvore vazia!\n");
         return 0;
-    if(*raiz ==  NULL)
+    }
+    if(*raiz == NULL){
         return 0;
-    int alt_esq = altura_ArvBin(&((*raiz)->esq));
-    int alt_dir = altura_ArvBin(&((*raiz)->dir));
-    if(alt_esq > alt_dir)
-        return(alt_esq + 1);
-    else
-        return(alt_dir + 1);
+    }
+    int altura_esq = altura_ArvBin(&((*raiz)->esq));
+    int altura_dir = altura_ArvBin(&((*raiz)->dir));
+    if (altura_esq > altura_dir){
+        return (altura_esq + 1);
+    }else{
+        return (altura_dir + 1);
+    }
 }
 
-void preOrdem_ArvBin(ArvBin *raiz){
-    if(raiz == NULL)
+void preOrdem_ArvBin(ArvBin* raiz){
+    if(raiz == NULL){
+        printf("Árvore vazia!\n");
         return;
+    }
     if(*raiz != NULL){
         printf("%d\n", (*raiz)->info);
         preOrdem_ArvBin(&((*raiz)->esq));
         preOrdem_ArvBin(&((*raiz)->dir));
+        return;
     }
 }
 
-void emOrdem_ArvBin(ArvBin *raiz){
-    if(raiz == NULL)
-       return;
+void emOrdem_ArvBin(ArvBin* raiz){
+    if(raiz == NULL){
+        printf("Árvore Vazia!\n");
+        return;
+    }
     if(*raiz != NULL){
         emOrdem_ArvBin(&((*raiz)->esq));
         printf("%d\n", (*raiz)->info);
         emOrdem_ArvBin(&((*raiz)->dir));
+        return;
     }
+
 }
 
-void posOrdem_ArvBin(ArvBin *raiz){
-    if(raiz == NULL)
-       return;
+void posOrdem_ArvBin(ArvBin* raiz){
+    if(raiz == NULL){
+        printf("Árvore vazia!\n");
+        return;
+    }
     if(*raiz != NULL){
-        posOrdem_ArvBin(&((*raiz)->esq));
-        posOrdem_ArvBin(&((*raiz)->dir));
-        printf("%d\n", (*raiz)->info);
+       posOrdem_ArvBin(&((*raiz)->esq));
+       posOrdem_ArvBin(&((*raiz)->dir));
+       printf("%d\n", (*raiz)->info);
+       return;
     }
+
 }
 
-int consulta_ArvBin(ArvBin *raiz, int valor){
-    if(raiz == NULL)
+int consulta_ArvBin(ArvBin* raiz, int valor){
+    if(raiz == NULL){
+        printf("Árvore vazia!\n");
         return 0;
+    }
     struct No* atual = *raiz;
     while(atual != NULL){
-        if(valor == atual->info)
+        if(valor == atual->info){
+            printf("Nó encontrado: %d\n", atual->info);
             return 1;
-        if(valor > atual->info)
+        }
+        if(valor > atual->info){
             atual = atual->dir;
-        else
-            atual = atual->esq;
+        }else{
+           atual =  atual->esq;
+        }
     }
-
+    printf("Nó não encontrado!\n");
     return 0;
-
 }
 
-int insere_ArvBin(ArvBin *raiz, int valor){
-    if(raiz == NULL)
+int insere_ArvBin(ArvBin* raiz, int valor){
+    if(raiz == NULL){
+        printf("Árvore vazia!\n");
         return 0;
-    struct No* novo;
-    novo = (struct No*)malloc(sizeof(struct No));
-    if(novo == NULL)
+    }
+    struct No* novo = (struct No*)malloc(sizeof(struct No));
+    if(novo == NULL){
+        printf("Erro na criação do nó!\n");
         return 0;
+    }
     novo->info = valor;
-    novo->dir = NULL;
     novo->esq = NULL;
-
+    novo->dir = NULL;
     if(*raiz == NULL)
        *raiz = novo;
     else{
@@ -129,18 +161,19 @@ int insere_ArvBin(ArvBin *raiz, int valor){
         while(atual != NULL){
             ant = atual;
             if(valor == atual->info){
-               free(novo);
-               return 0;
+                free(novo);
+                return 0;
+            }
+            if(valor > atual->info)
+               atual = atual->dir;
+            else
+                atual = atual->esq;
+
         }
-        if(valor > atual->info)
-           atual = atual->dir;
+        if(valor > ant->info)
+           ant->dir = novo;
         else
-           atual = atual->esq;
-    }
-    if(valor > ant->info)
-        ant->dir = novo;
-    else
-        ant->esq = novo;
+           ant->esq = novo;
     }
     return 1;
 
@@ -168,15 +201,17 @@ struct No* remove_atual(struct No* atual){
     return no2;
 }
 
-int remove_ArvBin(ArvBin *raiz, int valor){
-    if(*raiz == NULL)
-       return 0;
-    struct No* ant = NULL;
+int remove_ArvBin(ArvBin* raiz, int valor){
+    if(raiz == NULL){
+        printf("Árvore vazia!\n");
+        return 0;
+    }
     struct No* atual = *raiz;
+    struct No* ant = NULL;
     while(atual != NULL){
         if(valor == atual->info){
-           if(atual == *raiz)
-              *raiz = remove_atual(atual);
+            if(atual == *raiz)
+               *raiz = remove_atual(atual);
             else{
                 if(ant->dir == atual)
                    ant->dir = remove_atual(atual);
@@ -184,12 +219,12 @@ int remove_ArvBin(ArvBin *raiz, int valor){
                    ant->esq = remove_atual(atual);
             }
             return 1;
-        }
-        ant = atual;
-        if(valor >atual->info)
-            atual = atual->dir;
+       }
+       ant = atual;
+       if(valor > atual->info)
+           atual = atual->dir;
         else
-            atual = atual->esq;
+           atual = atual->esq;
     }
     return 0;
 }
@@ -200,29 +235,44 @@ int main(){
     insere_ArvBin(raiz, 10);
     posOrdem_ArvBin(raiz);
     printf("\n");
+    printf("Raiz: %d\n", (*raiz)->info);
+    printf("\n");
     insere_ArvBin(raiz, 20);
     posOrdem_ArvBin(raiz);
+    printf("\n");
+    printf("Raiz: %d\n", (*raiz)->info);
     printf("\n");
     insere_ArvBin(raiz, 50);
     posOrdem_ArvBin(raiz);
     printf("\n");
+    printf("Raiz: %d\n", (*raiz)->info);
+    printf("\n");
     insere_ArvBin(raiz, 12);
     posOrdem_ArvBin(raiz);
     printf("\n");
-    printf("Remoção na Árvore Binária:\n");
-    remove_ArvBin(raiz, 10);
-    emOrdem_ArvBin(raiz);
+    printf("Raiz: %d\n", (*raiz)->info);
     printf("\n");
+    printf("Altura da árvore: %d\n", altura_ArvBin(raiz));
+    printf("\n");
+    printf("Remoção na Árvore Binária:\n");
     remove_ArvBin(raiz, 20);
     posOrdem_ArvBin(raiz);
     printf("\n");
-    remove_ArvBin(raiz, 50);
-    posOrdem_ArvBin(raiz);
+    printf("Raiz: %d\n", (*raiz)->info);
     printf("\n");
     remove_ArvBin(raiz, 12);
     posOrdem_ArvBin(raiz);
     printf("\n");
+    printf("Raiz: %d\n", (*raiz)->info);
+    printf("\n");
+    printf("Altura da árvore: %d\n", altura_ArvBin(raiz));
+    printf("\n");
+    remove_ArvBin(raiz, 50);
+    posOrdem_ArvBin(raiz);
+    printf("\n");
+    remove_ArvBin(raiz, 10);
+    posOrdem_ArvBin(raiz);
+    printf("\n");
     libera_ArvBin(raiz);
     return 0;
-
 }
