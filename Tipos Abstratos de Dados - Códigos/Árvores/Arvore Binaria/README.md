@@ -92,4 +92,69 @@ e ordem posterior) de uma Árvore Binária Pura**.
 
 ![image](https://github.com/vinicOio222/Estrutura-de-Dados---Estudos/assets/101837153/ad2b80a8-c691-4231-be59-48b3717dfa52)
 
+**Altura da Árvore**
+
+![image](https://github.com/vinicOio222/Estrutura-de-Dados---Estudos/assets/101837153/38ccab39-e434-4906-9584-a373c653d9bb)
+
+**Percorrendo uma Árvore Binária** -> O(n) - **n**: número de nós
+
+Não existe uma ordem "natural" para se percorrer todos os nós de uma árvore binária. Algumas formas são muito utilizadas. A diferença entre elas está na ordem em que cada nó é visitado ao longo do percurso.
+
+* Percurso **pré-ordem**: visita **raiz**->filho da esquerda->filho da direita;
+
+![image](https://github.com/vinicOio222/Estrutura-de-Dados---Estudos/assets/101837153/7dd25cf0-154f-4bec-88d3-cd8cac8afe70)
+
+* Percurso **em-ordem**: visita filho da esquerda->**raiz**->filho da direita;
+
+![image](https://github.com/vinicOio222/Estrutura-de-Dados---Estudos/assets/101837153/7f38eee8-fe18-4168-8c0a-9e183ea3e7a1)
+
+* Percurso **pós-ordem**: visita filho da esquerda->filho da direita->**raiz**;
+
+![image](https://github.com/vinicOio222/Estrutura-de-Dados---Estudos/assets/101837153/9d6b320b-1c3e-46ed-8c0b-12618c955948)
+
+**Árvore Binária de Busca**
+* Tipo especial de árvore binária;
+* Possui as mesmas propriedades. No entanto, cada nó possui um valor (chave) associado a ele, que determina a posição do nó na árvore;
+* Regra para posicionamento deos valores na árvore, para cada nó pai:
+  * Todos os valores da subárvore **esquerda** são **menores** do que o nó pai;
+  * Todos os valores da subárvore **direita** são **maiores** do que o nó pai;
+* A inserção e remoção de nós na árvore binária de busca devem ser realizadas respeitando essa regra de posicionamento de nós;
+
+Ex: Procurando o valor 30
+
+![image](https://github.com/vinicOio222/Estrutura-de-Dados---Estudos/assets/101837153/f7b2f104-d78a-4622-8048-4ffe6c6be7ed)
+
+Ex 2: Procurando o valor 28
+
+![image](https://github.com/vinicOio222/Estrutura-de-Dados---Estudos/assets/101837153/97630e34-8894-4e05-8bc4-79fec0593304)
+
+Os nós encontrados formam um caminho simples descendente, partindo da raiz da árvore, e portanto, o tempo de execução é *O(h)*, onde *h* é a altura da árvore.
+
+**Inserindo um Nó em uma Árvore Binária de Busca**
+1. Compare o valor a ser inserido com a raiz;
+2. Se o valor for menos que a raiz: vá para a subárvore à esquerda;
+3. Se o valor for maior que a raiz: vá para a subárvore à direita;
+4. Aplique o método recursivamente(pode ser feito sem recursão) até cheagar a um nó folha;
+
+![image](https://github.com/vinicOio222/Estrutura-de-Dados---Estudos/assets/101837153/a0c12167-1768-4415-8794-d7dee61399c8)
+
+**Removendo um Nó de uma Árvore Binária de Busca**
+
+Remover um nó de uma árvore binária de busca não é um tarefa tão simples quando uma inserção. O nó a ser removido da árvore pode ser:
+* Um nó folha;
+
+![image](https://github.com/vinicOio222/Estrutura-de-Dados---Estudos/assets/101837153/7cddeb62-ebda-4fec-928a-362bb8a77629)
+
+
+* Um nó interno:
+  * Pode ter um ou dois filhos;
+
+![image](https://github.com/vinicOio222/Estrutura-de-Dados---Estudos/assets/101837153/561d3068-f96d-4f0d-9fc6-c32124087dc1)
+
+  * Pode ser a raiz;
+  * É preciso reorganizar  árvore para que ela continue sendo uma árvore binária de busca;
+
+![image](https://github.com/vinicOio222/Estrutura-de-Dados---Estudos/assets/101837153/2b0615bf-9a79-4595-9c5d-90185df1cd4a)
+
+
 **Código feito para Estudo da cadeira de Estrutura de Dados**
