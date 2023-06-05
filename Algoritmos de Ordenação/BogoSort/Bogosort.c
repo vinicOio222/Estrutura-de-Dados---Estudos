@@ -36,7 +36,7 @@ int main(){
     int numbers[] = {5,4,3,2,1,0};
     bogosort(numbers, 6);
     printf("Array Ordenado:\n");
-    for(int i = 0; i<6; i++)
+    for(int i = 0; i<7; i++)
         printf("%d ", numbers[i]);
     printf("\n");
 

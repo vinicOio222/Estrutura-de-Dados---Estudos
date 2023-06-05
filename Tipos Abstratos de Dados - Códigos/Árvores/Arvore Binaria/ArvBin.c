@@ -273,6 +273,7 @@ int main(){
     remove_ArvBin(raiz, 10);
     posOrdem_ArvBin(raiz);
     printf("\n");
+    emOrdem_ArvBin(raiz);
     libera_ArvBin(raiz);
     return 0;
 }
