@@ -85,9 +85,9 @@ int buscaHash_EncSep(Hash* ha, int mat){
         if(mat == aux->matricula){
            printf("\n===ALUNO ENCONTRADO===\n");
             printf("Posição: %d\n", pos);
-            printf("Nome: %s\n", ha->itens[pos]->nome);
-            printf("Matrícula: %d\n", ha->itens[pos]->matricula);
-            printf("Notas: %.2f, %.2f, %.2f\n", ha->itens[pos]->notas[0],ha->itens[pos]->notas[1],ha->itens[pos]->notas[2]);
+            printf("Nome: %s\n", aux->nome);
+            printf("Matrícula: %d\n", aux->matricula);
+            printf("Notas: %.2f, %.2f, %.2f\n", aux->notas[0],aux->notas[1],aux->notas[2]);
              printf("-----------------\n");
             return 1;
         }
