@@ -113,7 +113,7 @@ void imprimeHash(Hash* ha){
         while(aux != NULL){
             printf("Nome: %s\n", aux->nome);
             printf("Matrícula: %d\n", aux->matricula);
-            printf("Notas: %.2f, %.2f, %.2f\n", aux->notas[0], aux->notas[1], aux->notas[3]);
+            printf("Notas: %.2f, %.2f, %.2f\n", aux->notas[0], aux->notas[1], aux->notas[2]);
             printf("\n");
             aux = aux->prox;
         }
