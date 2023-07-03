@@ -21,7 +21,6 @@ Para tratamento de colisões, deve ser utilizado encadeamento separado.
   
 *Acessar as informações*
 
-Acessar as informações.
 1. Encontrar o nome e o endereço de um usuário a partir de um dado número
 de telefone.
 2. Remover o número de telefone de um usuário descadastrado do sistema
