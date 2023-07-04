@@ -1,4 +1,4 @@
-# Sistema Nacional de Catálogo de Telefones - Hash, AVL e Lista Encadeada
+# Sistema Nacional de Catálogo de Telefones - Tabela Hash, Árvore AVL e Lista Encadeada
 
 Este código em **linguagem C** implementa um **sistema de gerenciamento de registros de telefone**. Cada contato possui **nome, telefone e endereço**. Foram implementadas
 as estruturas de dados **Tabela Hash**, **Árvore AVL** e **Lista Encadeada**. O desenvolvimento deste programa seguiu as seguintes funcionalidades requisitadas para
